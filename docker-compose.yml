@@ -1,0 +1,41 @@
+version: "2"
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./api/app:/home/current/app
+    command: npm start
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.envrc.example
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./frontend/app:/home/current/app
+    command: npm start
+    ports:
+      - 8888:8888
+    env_file:
+      - ./.envrc.example
+
+  postgres:
+    image: postgres
+    ports:
+      - 5400:5432
+    env_file:
+      - ./.envrc.example
+
+  swagger_ui:
+      image: schickling/swagger-ui
+      environment:
+        API_URL: "http://localhost:3000/swagger"
+        PORT: 80
+      container_name: swagger_ui
+      ports:
+        - "4000:80"

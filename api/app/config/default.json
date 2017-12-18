@@ -1,0 +1,21 @@
+{
+  "app": {
+    "env": "Dev",
+    "swagger_ui_url": "http://localhost:4666",
+    "host": "localhost",
+    "port": 3000,
+    "title": "ATM",
+    "keys": [
+      "ATM"
+    ]
+  },
+  "postgres": {
+    "config": {
+      "user": "atm",
+      "database": "atm",
+      "host": "172.22.0.4",
+      "password": "password",
+      "port": "5432"
+    }
+  }
+}

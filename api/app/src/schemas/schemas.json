@@ -1,0 +1,121 @@
+{
+  "definitions": {
+    "signInSuccess": {
+      "title": "signInSuccess",
+      "properties": {
+        "user": {
+          "type": "object",
+          "$ref": "#/definitions/user"
+        }
+      }
+    },
+    "user": {
+      "title": "user",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "pin": {
+          "type": "string"
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/account"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "pin"
+      ]
+    },
+    "account": {
+      "title": "account",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "dailyWithdrawalLimit": {
+          "type": "number"
+        },
+        "transactions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/transaction"
+          }
+        }
+      }
+    },
+    "transaction": {
+      "title": "transaction",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    },
+    "signIn": {
+      "title": "signIn",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "standardSuccessResponse": {
+      "title": "standardResponse"
+    },
+    "standardFailureResponse": {
+      "title": "standardResponse",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/errorMessage"
+          }
+        }
+      }
+    },
+    "errorMessage": {
+      "title": "errorMessage",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionRequest": {
+      "accountId": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "number"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "app": {
+    "env": "NODE_ENV",
+    "swagger_ui_url": "SWAGGER_UI_URL",
+    "host": "API_HOST",
+    "port": "API_PORT"
+  },
+  "postgres": {
+    "config": {
+      "user": "POSTGRES_USER",
+      "database": "POSTGRES_DATABASE",
+      "host": "POSTGRES_HOST",
+      "password": "POSTGRES_PASSWORD",
+      "port": "POSTGRES_PORT"
+    }
+  }
+}
