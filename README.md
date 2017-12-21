@@ -5,7 +5,7 @@ PreRequisites:
 
 Run application:
 1) On command line in root folder run :make dockerUp
-2) visit localhost:4000 for swagger// sorry swagger not making it past auth, will fix if I have time
+2) visit localhost:4000 for swagger// swagger works now
 3) visit localhost:8888 for application pin number is 1234
 
 Visit DB

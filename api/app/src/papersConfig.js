@@ -17,7 +17,7 @@ module.exports = function() {
     useSession: true,
     serializers: [serialize],
     deserializers: [deserialize],
-    whiteList: [{ url: '/swagger', method: 'GET' }]
+    whiteList: [{ url: '/swagger' }]
   };
 
   return koapapers().registerMiddleware(config);

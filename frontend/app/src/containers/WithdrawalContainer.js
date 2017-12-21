@@ -23,14 +23,11 @@ class WithdrawalContainer extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-  const dailyWithdrawalLeft = state.account.dailyWithdrawalLeft < state.account.balance
-    ? state.account.dailyWithdrawalLeft
-    : state.account.balance;
   return {
     balance: state.account.balance || 0,
     dailyWithdrawalLimit: state.account.dailyWithdrawalLimit || 0,
-    dailyWithdrawalLeft,
-    dailyLimitReached: dailyWithdrawalLeft <= 0,
+    dailyWithdrawalLeft: state.account.dailyWithdrawlLeft || 0,
+    dailyLimitReached: state.account.dailyWithdrawlLeft <= 0,
     displayName: state.account.displayName || '',
     accountId: props.params.id
   };

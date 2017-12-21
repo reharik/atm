@@ -13,7 +13,7 @@
     "config": {
       "user": "atm",
       "database": "atm",
-      "host": "172.22.0.4",
+      "host": "172.23.0.4",
       "password": "password",
       "port": "5432"
     }

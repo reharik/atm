@@ -33,9 +33,6 @@ module.exports = function(app) {
   app.use(koagenericsession());
 
   app.use(async function(ctx, next) {
-    console.log(`==========ctx.req=========`);
-    console.log(ctx.session); // eslint-disable-line quotes
-    console.log(`==========END ctx.req=========`);
     await next();
   });
 
